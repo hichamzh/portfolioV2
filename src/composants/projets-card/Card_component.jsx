@@ -15,7 +15,7 @@ export const Card_component = ({ objets }) => {
     <>
       {objets.map((objet) => (
         <React.Fragment key={objet.id}>
-          <Card className="max-w-[24rem] relative my-6 h-[550px]">
+          <Card className="max-w-[24rem] relative my-6 h-[550px] animate__animated animate__fadeIn">
             <CardHeader
               floated={false}
               shadow={false}

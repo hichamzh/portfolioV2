@@ -15,10 +15,10 @@ export const About = () => {
         <div className="h-screen border-b-2 border-white">
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-4">
             <div className="max-w-3xl text-center">
-              <h1 className="mb-8 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white">
+              <h1 className="mb-8 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white animate__animated animate__backInLeft">
                 À propos de moi
               </h1>
-              <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300">
+              <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 animate__animated animate__backInRight">
                 Je suis <span className="text-accent">Hicham Zouit</span>,
                 aspirant développeur web à la recherche d'opportunités pour{" "}
                 <span className="text-accent">acquérir de l'expérience.</span>{" "}
@@ -28,13 +28,13 @@ export const About = () => {
               </p>
               <div className="flex flex-wrap justify-center items-center gap-4">
                 <a href="cv/cv-hicham.pdf" download>
-                  <button className="rounded-lg px-6 py-3 font-medium bg-sky-400 text-slate-900 hover:text-accent">
+                  <button className="rounded-lg px-6 py-3 font-medium bg-sky-400 text-slate-900 hover:text-accent animate__animated animate__backInUp">
                     Télécharger mon cv
                   </button>
                 </a>
                   <a href='#timeline'>
                 <MagneticButton>
-                    <button className="rounded-lg border px-6 py-3 font-medium text-white hover:border-accent">
+                    <button className="rounded-lg border px-6 py-3 font-medium text-white hover:border-accent animate__animated animate__backInUp">
                     Voir Plus
                     </button>
                 </MagneticButton>

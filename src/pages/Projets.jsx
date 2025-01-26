@@ -48,11 +48,11 @@ export const Projets = () => {
         </div>
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4">
           <div className="max-w-3xl text-center">
-            <h1 className="mb-8 text-4xl tracking-tight sm:text-6xl lg:text-7xl text-white">
+            <h1 className="mb-8 text-4xl tracking-tight sm:text-6xl lg:text-7xl text-white animate__animated animate__backInLeft">
               Découvrez <br />
               <span className="text-accent"> Mes Réalisations.</span>
             </h1>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 animate__animated animate__backInUp">
               Découvrez une sélection de projets sur lesquels j'ai travaillé,
               mettant en avant mon apprentissage et ma passion pour le
               développement web.
@@ -60,7 +60,7 @@ export const Projets = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 place-items-center w-full pt-5 px-3  lg:grid-cols-2 2xl:grid-cols-3 ">
-          <Card_component objets={projets} />
+          <Card_component objets={projets}/>
         </div>
       </main>
     </>

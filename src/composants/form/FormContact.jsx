@@ -48,7 +48,7 @@ export const FormContact = () => {
           <span className="loading loading-dots loading-lg text-white"></span>
         </div>
       )}
-      <form ref={form} onSubmit={sendEmail} className="max-w-sm mx-auto">
+      <form ref={form} onSubmit={sendEmail} className="max-w-sm mx-auto px-2">
         <div className="mb-5">
           <label
             htmlFor="name"
