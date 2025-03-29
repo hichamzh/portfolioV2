@@ -39,6 +39,15 @@ export const Projets = () => {
       link: "https://api-games-hicham.vercel.app/",
       github: "https://github.com/hichamzh/Api-games.git",
     },
+    {
+      id: 5,
+      name: "École l'Olivier",
+      content:
+        "Pour mon premier projet client, j’ai conçu, développé et hébergé le site de l’école Les Oliviers à Marseille, en optimisant le SEO et en soignant le design pour une expérience fluide et professionnelle.",
+      img: "/projets/ecole-lolivier.webp",
+      link: "https://ecoleprimairepriveelolivier.fr",
+      github: "https://github.com/hichamzh/",
+    },
   ];
   return (
     <>
@@ -60,7 +69,7 @@ export const Projets = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 place-items-center w-full pt-5 px-3  lg:grid-cols-2 2xl:grid-cols-3 ">
-          <Card_component objets={projets}/>
+          <Card_component objets={projets} />
         </div>
       </main>
     </>

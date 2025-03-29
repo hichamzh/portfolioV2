@@ -13,7 +13,7 @@ import {
 export const Card_component = ({ objets }) => {
   return (
     <>
-      {objets.map((objet) => (
+      {[...objets].reverse().map((objet) => (
         <React.Fragment key={objet.id}>
           <Card className="max-w-[24rem] relative my-6 h-[550px] animate__animated animate__fadeIn">
             <CardHeader
