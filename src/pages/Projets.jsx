@@ -1,54 +1,26 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import axios from 'axios'
 import { Card_component } from "../composants/projets-card/Card_component";
 
-export const Projets = () => {
-  const projets = [
-    {
-      id: 1,
-      name: "Météo App",
-      content:
-        "Une application météo dynamique développée en HTML, CSS et JavaScript, exploitant une API météo pour fournir des prévisions.",
-      img: "/projets/meteoapp.jpg",
-      link: "https://meteoappbyhicham.netlify.app/",
-      github: "https://github.com/hichamzh/weather_app.git",
-    },
-    {
-      id: 2,
-      name: "Pokédex React Api",
-      content:
-        "Une application web qui permet de voir jusqu'a 99 pokémons grâce à une Api",
-      img: "/projets/pokedex_react.webp",
-      link: "https://pokedexreacthichamv1.netlify.app/",
-      github: "https://github.com/hichamzh/portfolio_react_tailwind.git",
-    },
-    {
-      id: 3,
-      name: "Countries React Api",
-      content:
-        "Une application web qui permet de voir jusqu'a 250 Pays grâce à une Api",
-      img: "/projets/countries_react.webp",
-      link: "https://countriesreacthicham.netlify.app/",
-      github: "https://github.com/hichamzh/Countries_api_react.git",
-    },
-    {
-      id: 4,
-      name: "Api de Jeux",
-      content:
-        "Une API REST construite avec Node.js pour récupérer des informations sur des jeux, pour les affichés dans mon projet React.",
-      img: "/projets/api-game.png",
-      link: "https://api-games-hicham.vercel.app/",
-      github: "https://github.com/hichamzh/Api-games.git",
-    },
-    {
-      id: 5,
-      name: "École l'Olivier",
-      content:
-        "Pour mon premier projet client, j’ai conçu, développé et hébergé le site de l’école Les Oliviers à Marseille, en optimisant le SEO et en soignant le design pour une expérience fluide et professionnelle.",
-      img: "/projets/ecole-lolivier.webp",
-      link: "https://ecoleprimairepriveelolivier.fr",
-      github: "https://github.com/hichamzh/",
-    },
-  ];
+export const Projets = () => {  
+  const [projets, setProjets] = useState([])
+
+  useEffect(() => {
+
+      const fetchProjet = async ()  => {
+        try {
+          const reponse = await axios.get('http://localhost:8055/items/projet')
+          setProjets(reponse.data.data)          
+          console.log(reponse.data.data)          
+        
+        } catch (error) {
+          console.error("Erreur lors de la récupération des articles :", error);
+        }
+      }
+      fetchProjet();
+
+  }, [])
+  
   return (
     <>
       <main className="relative pt-32">

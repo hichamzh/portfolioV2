@@ -22,22 +22,22 @@ export const Card_component = ({ objets }) => {
               color="transparent"
               className="m-0 rounded-none rounded-t-lg relative border-b-2 border-primary"
             >
-              <img src={objet.img} alt="image du projet" />
+              <img src={`http://localhost:8055/assets/${objet.img_projet}`} alt="image du projet" />
             </CardHeader>
             <CardBody>
               <Typography variant="h4" className="text-primary">
-                {objet.name}
+                {objet.title}
               </Typography>
               <Typography
                 variant="lead"
                 className="mt-3 font-normal text-secondary"
               >
-                {objet.content}
+                {objet.description}
               </Typography>
             </CardBody>
             <CardFooter className="flex items-center justify-between">
               <div className="flex items-center -space-x-3">
-                <a href={objet.github} target="_blank">
+                <a href={objet.github_link} target="_blank">
                 <Tooltip content="Hicham Zouit">
                   <Avatar
                     size="sm"
