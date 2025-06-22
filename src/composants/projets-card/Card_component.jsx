@@ -22,7 +22,7 @@ export const Card_component = ({ objets }) => {
               color="transparent"
               className="m-0 rounded-none rounded-t-lg relative border-b-2 border-primary"
             >
-              <img src={`http://localhost:8055/assets/${objet.img_projet}`} alt="image du projet" />
+              <img src={`https://directus-portfolio-production.up.railway.app/assets/${objet.img_projet}`} alt="image du projet" />
             </CardHeader>
             <CardBody>
               <Typography variant="h4" className="text-primary">

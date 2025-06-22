@@ -10,6 +10,7 @@ export const Projets = () => {
       const fetchProjet = async ()  => {
         try {
           const reponse = await axios.get('https://directus-portfolio-production.up.railway.app/items/projet_portfolio')
+          //
           setProjets(reponse.data.data)          
           console.log(reponse.data.data)          
         
