@@ -1,33 +1,25 @@
-import React, {useEffect, useState} from "react";
-import axios from 'axios'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Card_component } from "../composants/projets-card/Card_component";
 
-export const Projets = () => {  
-  const [projets, setProjets] = useState([])
+export const Projets = () => {
+  const [projets, setProjets] = useState([]);
 
   useEffect(() => {
-
-      const fetchProjet = async ()  => {
-        try {
-<<<<<<< HEAD
-          const reponse = await axios.get('https://portfolio-directus-anqp.onrender.com/items/projet')
-          // const reponse = await axios.get('http://localhost:8055/items/projet')
-=======
-          // const reponse = await axios.get('https://directus-portfolio-production.up.railway.app/items/projet_portfolio')
-          const reponse = await axios.get('http://localhost:8055/items/projet')
->>>>>>> f24ed93916bce275b0ec6ef3978a5af5dbfd38d4
-
-          //
-          setProjets(reponse.data.data)          
-          console.log(reponse.data.data)          
-        
-        } catch (error) {
-          console.error("Erreur lors de la récupération des articles :", error);
-        }
+    const fetchProjet = async () => {
+      try {
+        const reponse = await axios.get(
+          "https://portfolio-directus-anqp.onrender.com/items/projet"
+        );
+        // const reponse = await axios.get('http://localhost:8055/items/projet')
+        setProjets(reponse.data.data);
+        console.log(reponse.data.data);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des articles :", error);
       }
-      fetchProjet();
-
-  }, [])
+    };
+    fetchProjet();
+  }, []);
 
   return (
     <>
