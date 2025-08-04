@@ -22,13 +22,8 @@ export const Card_component = ({ objets }) => {
               color="transparent"
               className="m-0 rounded-none rounded-t-lg relative border-b-2 border-primary"
             >
-<<<<<<< HEAD
               <img src={`https://portfolio-directus-anqp.onrender.com/assets/${objet.img_projet}`} alt="image du projet" />
               {/* <img src={`http://localhost:8055/assets/${objet.img_projet}`} alt="image du projet" /> */}
-=======
-              {/* <img src={`https://directus-portfolio-production.up.railway.app/assets/${objet.img_projet}`} alt="image du projet" /> */}
-              <img src={`http://localhost:8055/assets/${objet.img_projet}`} alt="image du projet" />
->>>>>>> f24ed93916bce275b0ec6ef3978a5af5dbfd38d4
             </CardHeader>
             <CardBody>
               <Typography variant="h4" className="text-primary">
