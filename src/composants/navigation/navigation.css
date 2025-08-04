@@ -1,0 +1,19 @@
+.group-links li {
+    position: relative;
+    cursor: pointer;
+}
+
+.group-links li::after {
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #42A5F5;
+    transition: width ease 300ms;
+}
+
+.group-links li:hover::after {
+    width: 100%;
+}
