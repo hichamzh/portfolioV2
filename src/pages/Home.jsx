@@ -6,8 +6,10 @@ export const Home = () => {
   return (
     <>
       <div className="relative h-screen">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 z-[-2] h-full w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+        <div class="absolute inset-0">
+          <div class="relative h-full w-full bg-[#020617] [&>div]:absolute [&>div]:bottom-0 [&>div]:left-[-20%] [&>div]:right-0 [&>div]:top-[-10%] [&>div]:h-[500px] [&>div]:w-[500px] [&>div]:rounded-full [&>div]:bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
+            <div></div>
+          </div>
         </div>
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4">
@@ -18,16 +20,19 @@ export const Home = () => {
             </h1>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 animate__animated animate__backInRight">
               Je m'appelle
-              <Link to={'about'}>
-                <span className="text-accent underline mx-[2px]">Hicham Zouit</span>,
-              </Link> 
+              <Link to={"about"}>
+                <span className="text-accent underline mx-[2px]">
+                  Hicham Zouit
+                </span>
+                ,
+              </Link>
               développeur web débutant, passionné par la création de sites
               modernes et performants. À la recherche d'opportunités pour
               développer mes compétences et contribuer à des projets
               intéressants.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to={"projets"}> 
+              <Link to={"projets"}>
                 <button className="rounded-lg px-6 py-3 font-medium bg-sky-400 text-slate-900 hover:text-accent animate__animated animate__backInUp">
                   Découvrez Mes Projets
                 </button>

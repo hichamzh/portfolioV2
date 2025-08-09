@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card_component } from "../composants/projets-card/Card_component";
+import projet_json from "../data-json/projets.json"
 
 export const Projets = () => {
   const [projets, setProjets] = useState([]);
@@ -13,7 +14,6 @@ export const Projets = () => {
         );
         // const reponse = await axios.get('http://localhost:8055/items/projet')
         setProjets(reponse.data.data);
-        console.log(reponse.data.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des articles :", error);
       }
@@ -23,10 +23,7 @@ export const Projets = () => {
 
   return (
     <>
-      <main className="relative pt-32">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 z-[-2] h-full w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
-        </div>
+      <main className="relative pt-32 bg-primary">
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4">
           <div className="max-w-3xl text-center">
             <h1 className="mb-8 text-4xl tracking-tight sm:text-6xl lg:text-7xl text-white animate__animated animate__backInLeft">

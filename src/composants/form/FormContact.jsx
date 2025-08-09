@@ -60,10 +60,11 @@ export const FormContact = () => {
             type="text"
             id="name"
             name="name"
-            className="bg-primary border border-accent text-white text-sm rounded-lg focus:ring-black focus:border-black block w-full p-2.5"
+            className="bg-primary border border-accent text-white text-sm rounded-md focus:ring-black focus:border-black block w-full p-4"
             placeholder="Nom Prénom"
             required
           />
+          
         </div>
         <div className="mb-5">
           <label
@@ -76,7 +77,7 @@ export const FormContact = () => {
             type="email"
             id="email"
             name="email"
-            className="bg-primary border border-accent text-white text-sm rounded-lg focus:ring-black focus:border-black block w-full p-2.5"
+            className="bg-primary border border-accent text-white text-sm rounded-md focus:ring-black focus:border-black block w-full p-4"
             placeholder="email@gmail.com"
             required
           />
@@ -90,7 +91,7 @@ export const FormContact = () => {
             id="message"
             rows={4}
             placeholder="Bonjour..."
-            className="block p-2.5 w-full text-sm bg-primary border-accent border rounded-lg"
+            className="block p-4 w-full text-sm bg-primary border-accent border rounded-md"
           ></textarea>
         </div>
         <div>

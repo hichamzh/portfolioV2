@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "title": "Pokédex React Api",
+      "description": "Une application web qui permet de voir jusqu'a 99 pokémons grâce à une Api.",
+      "github_link": "https://github.com/hichamzh/pokedex_react",
+      "link": "https://pokedexreacthichamv1.netlify.app",
+      "img_projet": "/projets/pokedex_react.webp"
+    },
+    {
+      "id": 2,
+      "title": "Météo App",
+      "description": "Une application météo dynamique développée en HTML, CSS et JavaScript, exploitant une API météo pour fournir des prévisions.",
+      "github_link": "https://github.com/hichamzh/weather_app.git",
+      "link": "https://meteoappbyhicham.netlify.app",
+      "img_projet": "./projets/meteoapp.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Countries React Api",
+      "description": "Une application web qui permet de voir jusqu'a 250 Pays grâce à une Api.",
+      "github_link": "https://github.com/hichamzh/Countries_api_react.git",
+      "link": "https://countriesreacthicham.netlify.app",
+      "img_projet": "./projets/countries_react.webp"
+    },
+    {
+      "id": 4,
+      "title": "Api de Jeux",
+      "description": "Une API REST construite avec Node.js pour récupérer des informations sur des jeux, pour les affichés dans mon projet React.",
+      "github_link": "https://github.com/hichamzh/Api-games.git",
+      "link": "https://api-games-hicham.vercel.app",
+      "img_projet": "./projets/api-game.png"
+    },
+    {
+      "id": 5,
+      "title": "École Primaire Privée l'Olivier",
+      "description": "J’ai conçu, développé et hébergé le site de l’école Les Oliviers à Marseille, en optimisant le SEO et en soignant le design pour une expérience fluide et professionnelle.",
+      "github_link": "https://github.com/hichamzh",
+      "link": "https://ecoleprimairepriveelolivier.fr",
+      "img_projet": "./projets/ecole-lolivier.webp"
+    }
+  ]
+  

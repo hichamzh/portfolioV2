@@ -9,11 +9,13 @@ import {
   Tooltip,
   Button,
 } from "@material-tailwind/react";
+import projet_json from "../../data-json/projets.json"
+
 
 export const Card_component = ({ objets }) => {
   return (
     <>
-      {[...objets].reverse().map((objet) => (
+      {[...projet_json].reverse().map((objet) => (
         <React.Fragment key={objet.id}>
           <Card className="max-w-[24rem] relative my-6 h-[550px] animate__animated animate__fadeIn">
             <CardHeader
@@ -22,7 +24,8 @@ export const Card_component = ({ objets }) => {
               color="transparent"
               className="m-0 rounded-none rounded-t-lg relative border-b-2 border-primary"
             >
-              <img src={`https://portfolio-directus-anqp.onrender.com/assets/${objet.img_projet}`} alt="image du projet" />
+              <img src={objet.img_projet} alt={`${objet.title} Image`} />
+              {/* <img src={`https://portfolio-directus-anqp.onrender.com/assets/${objet.img_projet}`} alt="image du projet" /> */}
               {/* <img src={`http://localhost:8055/assets/${objet.img_projet}`} alt="image du projet" /> */}
             </CardHeader>
             <CardBody>

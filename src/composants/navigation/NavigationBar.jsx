@@ -22,9 +22,9 @@ export const NavigationBar = () => {
   return (
     <>
       <header>
-        <nav className="w-full flex items-center justify-between py-5 px-10">
+        <nav className="w-full flex items-center justify-between py-4 px-10  border-b border-accent">
           <Link to="/">
-            <div className="btn btn-accent btn-sm md:btn-md lg:btn-lg">
+            <div className="btn btn-accent btn-sm md:btn-md lg:btn-md">
               Hicham Zouit
             </div>
           </Link>
@@ -45,7 +45,7 @@ export const NavigationBar = () => {
             className={`group-links z-40
               
              fixed h-full w-full ${
-               active ? "left-1/2 -translate-x-1/2 bg-primary" : "left-full"
+               active ? "left-1/2 -translate-x-1/2 bg-secondary" : "left-full"
              } top-1/2 transform -translate-y-1/2 flex flex-col pb-40 justify-center items-center lg:p-0 lg:bg-transparent lg:flex lg:flex-row lg:justify-normal lg:static lg:top-auto lg:left-auto lg:transform-none lg:w-auto lg:h-auto gap-8 text-xl font-medium transition-all ease-in`}
           >
             {active && (
@@ -53,14 +53,14 @@ export const NavigationBar = () => {
                 <li className="cursor-pointer">Acceuil</li>
               </Link>
             )}
-            <Link to={"about"} onClick={handleCloseMenu}>
+            {/* <Link to={"about"} onClick={handleCloseMenu}>
               <li className="cursor-pointer">À propos de moi</li>
-            </Link>
+            </Link> */}
             <Link to={"projets"} onClick={handleCloseMenu}>
               <li className="cursor-pointer">Mes Projets</li>
             </Link>
             <Link to="/contact" onClick={handleCloseMenu}>
-              <button className="btn btn-accent btn-md lg:btn-lg">
+              <button className="btn btn-accent btn-md lg:btn-md">
                 Contactez-moi
               </button>
             </Link>

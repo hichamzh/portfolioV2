@@ -6,12 +6,7 @@ import { TimeLine } from "../composants/about/TimeLine";
 export const About = () => {
   return (
     <>
-      <div className="relative h-full">
-        <div className="absolute inset-0">
-          <div className="relative h-full w-full bg-slate-950 [&>div]:absolute [&>div]:inset-0 [&>div]:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] [&>div]:bg-[size:14px_24px]">
-            <div></div>
-          </div>
-        </div>
+      <div className="relative h-full bg-primary">
         <div className="h-screen border-b-2 border-white">
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-4">
             <div className="max-w-3xl text-center">
