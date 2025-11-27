@@ -1,0 +1,51 @@
+[
+    {
+            "id" : 1,
+            "title" : "React",
+            "desc" : "Bibliothèque JavaScript pour interfaces utilisateur",
+            "icon" : "FaReact",
+            "color" : "#2F6FEE"
+    },
+    {
+            "id" : 2,
+            "title" : "Tailwind Css",
+            "desc" : "Framework CSS utility-first",
+            "icon" : "RiTailwindCssFill",
+            "color" : "#10A7C6"
+    },
+    {
+            "id" : 3,
+            "title" : "Next js",
+            "desc" : "Framework React pour créer des applications web rapides et optimisées.",
+            "icon" : "RiNextjsFill",
+            "color" : "#000000"
+    },
+    {
+            "id" : 4,
+            "title" : "Vscode",
+            "desc" : "Éditeur de code moderne et extensible pour développeurs.",
+            "icon" : "VscVscode",
+            "color" : "#2F6FEE"
+    },
+    {
+            "id" : 5,
+            "title" : "PostgreSQL",
+            "desc" : "Système de base de données SQL puissant, fiable et open-source.",
+            "icon" : "SiPostgresql",
+            "color" : "#24B258"
+    },
+    {
+            "id" : 6,
+            "title" : "GitHub",
+            "desc" : "Plateforme de gestion de code et de collaboration pour développeurs.",
+            "icon" : "FaGithub",
+            "color" : "#F37727"
+    },
+    {
+            "id" : 7,
+            "title" : "JavaScript",
+            "desc" : "Langage de programmation pour créer des interfaces web dynamiques.",
+            "icon" : "FaJs",
+            "color" : "#DDA40A"
+    }
+]

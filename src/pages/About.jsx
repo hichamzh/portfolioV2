@@ -1,6 +1,5 @@
 import React from "react";
 import MagneticButton from "../composants/bundui/MagneticButton";
-import { TimeLine } from "../composants/about/TimeLine";
 
 
 export const About = () => {
@@ -40,7 +39,6 @@ export const About = () => {
         </div>
         <div className="h-full pt-20" id="timeline">
             <h2 className="text-center mb-14 text-3xl font-bold tracking-tight sm:text-6xl lg:text-6xl text-white">Mon parcours</h2>
-          <TimeLine />
         </div>
       </div>
     </>
