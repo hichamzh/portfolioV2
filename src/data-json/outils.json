@@ -18,7 +18,7 @@
             "title" : "Next js",
             "desc" : "Framework React pour créer des applications web rapides et optimisées.",
             "icon" : "RiNextjsFill",
-            "color" : "#000000"
+            "color" : "gray-300"
     },
     {
             "id" : 4,
