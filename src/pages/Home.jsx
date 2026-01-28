@@ -4,10 +4,19 @@ import About from "../composants/about/About";
 import Projets from "../composants/projets/Projets";
 import Competences from "./Competences";
 import Contact from "./Contact";
+import { Helmet } from "react-helmet";
 
 export const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Portfolio Hicham Zouit - Développeur Web</title>
+        <meta
+          name="description"
+          content="En recherche d'alternance, développeur web front-end et fullstack. Découvrez mes projets et compétences."
+        />
+      </Helmet>
+      
       <div className="relative h-screen overflow-x-hidden">
         <div className="absolute inset-0">
           <div className="relative h-full w-full overflow-hidden bg-[#020617] [&>div]:absolute [&>div]:bottom-0 [&>div]:left-[-20%] [&>div]:right-0 [&>div]:top-[-10%] [&>div]:h-[500px] [&>div]:w-[500px] [&>div]:rounded-full [&>div]:bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
@@ -20,7 +29,6 @@ export const Home = () => {
             <h1 className="mb-8 text-4xl tracking-tight sm:text-6xl lg:text-7xl text-white animate__animated animate__backInLeft">
               Transformez vos idées en
               <span className="block pb-2 bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 bg-clip-text text-transparent">
-                
                 Réalité Digitale.
               </span>
             </h1>
@@ -100,7 +108,6 @@ export const Home = () => {
                   </svg>
                 </i>
               </a>
-              
             </div>
           </div>
         </div>
