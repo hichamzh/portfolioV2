@@ -37,13 +37,13 @@ export const Card_component = () => {
             </header>
             <p>{projet.description}</p>
             <footer className="flex gap-5">
-              <a className="text-md flex gap-2 items-center text-purple-400 hover:text-white">
+              <a href={projet.link} className="text-md flex gap-2 items-center text-purple-400 hover:text-white">
                 <i>
                   <ExternalLink />
                 </i>
                 Voir
               </a>
-              <a href="" className="text-md flex gap-2 items-center text-gray-500 hover:text-white">
+              <a href={projet.github_link} className="text-md flex gap-2 items-center text-gray-500 hover:text-white">
                 <i data-fa-i2svg="">
                   <svg
                     className="svg-inline--fa fa-github"
