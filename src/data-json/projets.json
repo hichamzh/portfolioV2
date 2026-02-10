@@ -31,7 +31,7 @@
     "tags": [
       {
         "stack": "React",
-        "style": "bg-cyan-500/10 text-cyan-400"
+        "style": "bg-cyan-500/10 text-cyan-400 border border-cyan-400"
       },
       {
         "stack": "Css",
@@ -50,7 +50,7 @@
         "tags": [
       {
         "stack": "React",
-        "style": "bg-cyan-500/10 text-cyan-400"
+        "style": "bg-cyan-500/10 text-cyan-400 border border-cyan-400"
       },
       {
         "stack": "Css",
@@ -68,7 +68,7 @@
         "tags": [
       {
         "stack": "React",
-        "style": "bg-cyan-500/10 text-cyan-400"
+        "style": "bg-cyan-500/10 text-cyan-400 border border-cyan-400"
       },
       {
         "stack": "Css",
@@ -86,11 +86,28 @@
         "tags": [
       {
         "stack": "React",
-        "style": "bg-cyan-500/10 text-cyan-400"
+        "style": "bg-cyan-500/10 text-cyan-400 border border-cyan-400"
       },
       {
         "stack": "Css",
         "style": "bg-blue-600/10 text-blue-500"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Football Club de la Castellane",
+"description": "Le site est en cours de production. J'ai développé et hébergé le site de FC La Castellane, en optimisant le SEO et en soignant le design pour offrir une expérience fluide et professionnelle, tout en étant accompagné du Treizième Homme (OM) lors de la création du site.",    "github_link": "https://github.com/hichamzh",
+    "link": "https://fclacastellane.vercel.app",
+    "img_projet": "./projets/fclacastellane.webp",
+        "tags": [
+      {
+        "stack": "Next js",
+        "style": "bg-cyan-500/10 text-cyan-400 border border-cyan-400"
+      },
+      {
+        "stack": "Css",
+        "style": "bg-blue-600/10 text-blue-500 border border-blue-500"
       }
     ]
   }
