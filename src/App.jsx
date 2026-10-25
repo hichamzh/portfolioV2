@@ -1,21 +1,20 @@
-import "./App.css";
-import { NavigationBar } from "./composants/navigation/NavigationBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
+import { NavigationBar } from "./composants/navigation/NavigationBar";
 import { Footer } from "./composants/footer/Footer";
-import "animate.css";
 import { ButtonTop } from "./composants/arrowUp/ButtonTop";
-
+import { Home } from "./pages/Home";
 
 function App() {
   return (
     <Router>
-      <ButtonTop />
       <NavigationBar />
-      <Routes>
-        <Route path="" element={<Home />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </main>
       <Footer />
+      <ButtonTop />
     </Router>
   );
 }

@@ -1,3 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-craie font-sans text-encre antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  :focus-visible {
+    outline: 2px solid #f2b33d;
+    outline-offset: 3px;
+  }
+}
+
+/* Entrée du hero : une seule séquence au chargement */
+@keyframes monte {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.entree {
+  opacity: 0;
+  animation: monte 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 110ms + 80ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .entree {
+    opacity: 1;
+    animation: none;
+  }
+}
