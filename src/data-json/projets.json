@@ -15,7 +15,7 @@
       "title": "FC La Castellane",
       "type": "Club de football, Marseille",
       "description": "Site du club : actualités, équipes, calendrier, entraînements et contact. Réalisé avec l'accompagnement du Treizième Homme (OM).",
-      "link": "https://fclacastellane.vercel.app",
+      "link": "https://fclacastellane.fr",
       "image": "/projets/fclacastellane.webp",
       "alt": "Page d'accueil du site du FC La Castellane",
       "stack": ["Next.js", "Tailwind CSS", "SEO"]
