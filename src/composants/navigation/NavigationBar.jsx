@@ -1,75 +1,75 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import "./navigation.css";
+import { Menu, X } from "lucide-react";
+
+const liens = [
+  { href: "#services", label: "Services" },
+  { href: "#realisations", label: "Réalisations" },
+  { href: "#methode", label: "Méthode" },
+  { href: "#a-propos", label: "À propos" },
+];
 
 export const NavigationBar = () => {
-  const [active, setActive] = useState(false);
+  const [ouvert, setOuvert] = useState(false);
 
   useEffect(() => {
-    if (active) {
-      document.body.style.overflow = "hidden";
-    } else {
+    document.body.style.overflow = ouvert ? "hidden" : "";
+    return () => {
       document.body.style.overflow = "";
-    }
-  }, [active]);
+    };
+  }, [ouvert]);
 
-  const handleCloseMenu = () => {
-    setActive(false);
-  };
+  const fermer = () => setOuvert(false);
 
   return (
-    <>
-      <header>
-        <nav className="w-full flex items-center justify-between py-4 px-10 border-b border-purple-500 bg-[#0C0C10]">
-          <Link to="/">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Hicham Zouit
-            </div>
-          </Link>
-          <button
-            className="menu-burger lg:hidden z-50 w-7 h-7"
-            onClick={() => {
-              setActive(!active);
-            }}
-          >
-            {active ? (
-              <FontAwesomeIcon icon={faXmark} className="w-full h-full" />
-            ) : (
-              <FontAwesomeIcon icon={faBars} className="w-full h-full" />
-            )}
-          </button>
+    <header className="sticky top-0 z-50 border-b border-craie/10 bg-abysse text-craie">
+      <nav
+        aria-label="Navigation principale"
+        className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+      >
+        <Link to="/" onClick={fermer} className="font-display text-xl font-bold">
+          Hicham Zouit
+        </Link>
 
-          <ul
-            className={`group-links z-40
-              
-             fixed h-full w-full ${
-               active ? "left-1/2 -translate-x-1/2 bg-black" : "left-full"
-             } top-1/2 transform -translate-y-1/2 flex flex-col pb-40 justify-center items-center lg:p-0 lg:bg-transparent lg:flex lg:flex-row lg:justify-normal lg:static lg:top-auto lg:left-auto lg:transform-none lg:w-auto lg:h-auto gap-8 text-xl font-medium transition-all ease-in`}
-          >
-            {active && (
-              <a to={"/"} onClick={handleCloseMenu}>
-                <li className="cursor-pointer">Acceuil</li>
+        <button
+          type="button"
+          className="relative z-[60] lg:hidden"
+          onClick={() => setOuvert(!ouvert)}
+          aria-expanded={ouvert}
+          aria-controls="menu-principal"
+          aria-label={ouvert ? "Fermer le menu" : "Ouvrir le menu"}
+        >
+          {ouvert ? <X size={26} /> : <Menu size={26} />}
+        </button>
+
+        <ul
+          id="menu-principal"
+          className={`${
+            ouvert ? "flex" : "hidden"
+          } fixed inset-0 z-50 flex-col items-center justify-center gap-8 bg-abysse text-2xl lg:static lg:z-auto lg:flex lg:flex-row lg:gap-8 lg:bg-transparent lg:text-base`}
+        >
+          {liens.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                onClick={fermer}
+                className="text-craie/80 transition-colors hover:text-white"
+              >
+                {l.label}
               </a>
-            )}
-            <a href="#about" onClick={handleCloseMenu}>
-              <li className="cursor-pointer">À propos de moi</li>
+            </li>
+          ))}
+          <li>
+            <a
+              href="#contact"
+              onClick={fermer}
+              className="rounded-lg bg-soleil px-5 py-2.5 font-semibold text-abysse transition-colors hover:bg-white"
+            >
+              Demander un devis
             </a>
-            <a href="#projets" onClick={handleCloseMenu}>
-              <li className="cursor-pointer">Mes Projets</li>
-            </a>
-            <a href="#mes-competences" onClick={handleCloseMenu}>
-              <li className="cursor-pointer">Mes compétences</li>
-            </a>
-            <a href="#contact" onClick={handleCloseMenu}>
-              <span className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
-                Contactez-moi
-              </span>
-            </a>
-          </ul>
-        </nav>
-      </header>
-    </>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };

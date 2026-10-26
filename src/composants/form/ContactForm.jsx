@@ -1,135 +1,143 @@
 import { useState } from "react";
-import { Spinner } from "@material-tailwind/react";
+
+const champ =
+  "w-full rounded-lg border border-craie/20 bg-profond px-4 py-3 text-craie placeholder:text-craie/40 focus:border-soleil focus:outline-none";
 
 export default function ContactForm() {
-  const [result, setResult] = useState("");
-  const [status, setStatus] = useState(""); // success | error | sending
+  const [etat, setEtat] = useState("repos"); // repos | envoi | ok | erreur
 
-  const [loading, setloading] = useState(false);
-
-  const onSubmit = async (event) => {
+  const envoyer = async (event) => {
     event.preventDefault();
-    setStatus("sending");
-    setResult("Envoi en cours...");
-    setloading(true);
-    document.body.style.overflow = "hidden";
+    const form = event.currentTarget;
+    setEtat("envoi");
 
-    const formData = new FormData(event.target);
-    console.log(formData);
+    const donnees = new FormData(form);
+    donnees.append("access_key", import.meta.env.VITE_API_MAIL);
+    donnees.append("subject", "Nouvelle demande de devis depuis le site");
 
-    formData.append("access_key", import.meta.env.VITE_API_MAIL);
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setStatus("success");
-      setResult("Message envoyé !");
-      setloading(false);
-      document.body.style.overflow = "";
-      event.target.reset();
-    } else {
-      setStatus("error");
-      setResult("Une erreur est survenue.");
-      setloading(false);
-      document.body.style.overflow = "";
+    try {
+      const reponse = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: donnees,
+      });
+      const data = await reponse.json();
+      if (data.success) {
+        setEtat("ok");
+        form.reset();
+      } else {
+        setEtat("erreur");
+      }
+    } catch {
+      setEtat("erreur");
     }
   };
 
   return (
-    <>
-      {loading && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black/80 flex items-center justify-center z-[999]">
-          <div className="w-16 h-16 border-4 border-t-purple-500 border-gray-700 rounded-full animate-spin"></div>
-        </div>
-      )}
-      <form
-        onSubmit={onSubmit}
-        method="POST"
-        className="space-y-6 w-full mb-10 lg:w-1/2"
-      >
-        <div className="w-full flex flex-col items-start">
-          <label htmlFor="name" className="block text-sm font-semibold mb-2">
+    <form onSubmit={envoyer} className="space-y-5" noValidate={false}>
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="hidden"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="nom" className="mb-2 block text-sm font-medium">
             Nom
           </label>
           <input
-            required
-            type="text"
-            id="name"
+            id="nom"
             name="Nom"
-            className="w-full px-4 py-3 bg-[#1A1A1A] border border-gray-600 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-          />
-        </div>
-        <div className="w-full flex flex-col items-start">
-          <label htmlFor="phone" className="block text-sm font-semibold mb-2">
-            Téléphone
-          </label>
-          <input
+            type="text"
             required
-            type="number"
-            id="phone"
-            name="Téléphone"
-            className="w-full px-4 py-3 bg-[#1A1A1A] border border-gray-600 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+            autoComplete="name"
+            className={champ}
           />
         </div>
-
-        <div className="w-full flex flex-col items-start">
-          <label htmlFor="email" className="block text-sm font-semibold mb-2">
+        <div>
+          <label htmlFor="email" className="mb-2 block text-sm font-medium">
             Email
           </label>
           <input
-            required
-            type="email"
-            id="Email"
+            id="email"
             name="email"
-            className="w-full px-4 py-3 bg-[#1A1A1A] border border-gray-600 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+            type="email"
+            required
+            autoComplete="email"
+            className={champ}
           />
         </div>
+      </div>
 
-        <div className="w-full flex flex-col items-start">
-          <label className="block text-sm font-semibold mb-2">Message</label>
-          <textarea
-            name="message"
-            required
-            rows="5"
-            className="w-full px-4 py-3 bg-[#1A1A1A] border border-gray-600 rounded-lg focus:border-purple-500 focus:outline-none transition-colors resize-none"
-            placeholder="Votre message..."
-          ></textarea>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="tel" className="mb-2 block text-sm font-medium">
+            Téléphone (facultatif)
+          </label>
+          <input
+            id="tel"
+            name="Téléphone"
+            type="tel"
+            autoComplete="tel"
+            className={champ}
+          />
         </div>
+        <div>
+          <label htmlFor="projet" className="mb-2 block text-sm font-medium">
+            Type de projet
+          </label>
+          <select
+            id="projet"
+            name="Type de projet"
+            defaultValue="Site vitrine"
+            className={champ}
+          >
+            <option>Site vitrine</option>
+            <option>Refonte de site</option>
+            <option>Application web</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+      </div>
 
-        <button
-          type="submit"
-          className="bg-gradient-to-r from-blue-500 to-purple-600 w-full py-4 rounded-lg"
-        >
-          {loading ? (
-            <div className="flex items-center justify-center gap-5">
-              <Spinner className="text-purple-400" />
-              Chargement en cour...
-            </div>
-          ) : (
-            <>Envoyez le message</>
-          )}
-        </button>
-        {result && (
-          <>
-            <p
-              className={`text-center mt-4 font-semibold ${
-                status === "success"
-                  ? "text-green-400"
-                  : status === "error"
-                  ? "text-red-400"
-                  : "text-blue-400"
-              }`}
-            >
-              {result}
-            </p>
-          </>
+      <div>
+        <label htmlFor="message" className="mb-2 block text-sm font-medium">
+          Votre projet
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={5}
+          placeholder="Votre activité, ce que vous attendez du site, une échéance éventuelle…"
+          className={`${champ} resize-none`}
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={etat === "envoi"}
+        className="w-full rounded-lg bg-soleil px-7 py-3.5 font-semibold text-abysse transition-colors hover:bg-white disabled:opacity-60 sm:w-auto"
+      >
+        {etat === "envoi" ? "Envoi en cours" : "Envoyer ma demande"}
+      </button>
+
+      <p role="status" aria-live="polite" className="min-h-6 text-sm">
+        {etat === "ok" && (
+          <span className="text-emerald-300">
+            Message envoyé. Je vous réponds personnellement.
+          </span>
         )}
-      </form>
-    </>
+        {etat === "erreur" && (
+          <span className="text-red-300">
+            L'envoi a échoué. Réessayez ou écrivez-moi directement à
+            hichamz.dev@gmail.com.
+          </span>
+        )}
+      </p>
+    </form>
   );
 }
